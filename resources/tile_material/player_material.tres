@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c8ex74o8i2j1l"]
+
+[ext_resource type="Shader" path="res://resources/tile.gdshader" id="1_p2o1q"]
+
+[resource]
+shader = ExtResource("1_p2o1q")
+shader_parameter/foreground_color = Color(1, 1, 1, 1)
+shader_parameter/background_color = Color(0, 0, 0, 1)

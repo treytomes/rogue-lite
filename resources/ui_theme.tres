@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://crkvqblvusdst"]
+
+[ext_resource type="FontFile" uid="uid://dy34sq63wv7ee" path="res://assets/fonts/WebPlus_IBM_EGA_8x8.woff" id="1_v2rs2"]
+
+[resource]
+default_base_scale = 2.0
+default_font = ExtResource("1_v2rs2")
