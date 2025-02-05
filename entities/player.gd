@@ -63,5 +63,7 @@ func can_move(direction) -> bool:
 	
 func move(direction):
 	movement_tween = create_tween()
-	movement_tween.tween_property(self, "position", position + direction, 1.0 / animation_speed).set_trans(Tween.TransitionType.TRANS_LINEAR)
+	var target_position = position + direction
+	var friction = get_friction()
+	movement_tween.tween_property(self, "position", target_position, friction / animation_speed).set_trans(Tween.TransitionType.TRANS_LINEAR)
 	movement_tween.play()

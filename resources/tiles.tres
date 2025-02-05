@@ -1,8 +1,8 @@
 [gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dymlaashsuavk"]
 
-[ext_resource type="Material" uid="uid://dhpf40awqr6dj" path="res://resources/tile_material/grass_material.tres" id="1_wmma8"]
-[ext_resource type="Material" uid="uid://5pfomnt8itjh" path="res://resources/tile_material/sand_material.tres" id="2_1fqsl"]
-[ext_resource type="Material" uid="uid://culk63a0fkm1d" path="res://resources/tile_material/stone_material.tres" id="2_honj8"]
+[ext_resource type="Material" uid="uid://dhpf40awqr6dj" path="res://resources/tile_material/grass_material.tres" id="1_y3pht"]
+[ext_resource type="Material" uid="uid://5pfomnt8itjh" path="res://resources/tile_material/sand_material.tres" id="2_rn8ea"]
+[ext_resource type="Material" uid="uid://culk63a0fkm1d" path="res://resources/tile_material/stone_material.tres" id="3_mnph3"]
 [ext_resource type="Texture2D" uid="uid://b2fpwlipwxxpg" path="res://assets/gfx/oem437_8.png" id="4_tupjh"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6s1k4"]
@@ -97,11 +97,11 @@ texture_region_size = Vector2i(8, 8)
 0:11/next_alternative_id = 4
 0:11/0 = 0
 0:11/1 = 1
-0:11/1/material = ExtResource("1_wmma8")
-0:11/1/custom_data_1 = 5.0
+0:11/1/material = ExtResource("1_y3pht")
+0:11/1/custom_data_1 = 1.0
 0:11/3 = 3
-0:11/3/material = ExtResource("2_1fqsl")
-0:11/3/custom_data_1 = 10.0
+0:11/3/material = ExtResource("2_rn8ea")
+0:11/3/custom_data_1 = 2.0
 0:12/0 = 0
 0:13/0 = 0
 0:14/0 = 0
@@ -120,7 +120,7 @@ texture_region_size = Vector2i(8, 8)
 2:11/next_alternative_id = 5
 2:11/0 = 0
 2:11/1 = 1
-2:11/1/material = ExtResource("2_honj8")
+2:11/1/material = ExtResource("3_mnph3")
 2:11/1/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_6s1k4")
 2:11/1/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 2:12/0 = 0
