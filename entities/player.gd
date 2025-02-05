@@ -23,7 +23,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$LightArea.texture_scale = base_light_scale + (1 - sin(Globals.world_time.fract_day * PI))
+	$LightArea.texture_scale = base_light_scale + sin(Globals.world_time.fract_day * PI)
 	
 	if can_move(direction):
 		move(direction)

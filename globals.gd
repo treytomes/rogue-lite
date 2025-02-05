@@ -2,9 +2,9 @@ extends Node
 
 
 const HOURS_PER_DAY: int = 24
-const MINUTES_PER_HOUR: int = 12
+const MINUTES_PER_HOUR: int = 60
 const WORLD_TIME_START: int = 12
-const WORLD_TIME_UPDATE_SCALE: float = 1
+const WORLD_TIME_UPDATE_SCALE: float = 0.5
 
 
 class WorldTime:
@@ -21,12 +21,13 @@ class WorldTime:
 	var minutes: int:
 		get:
 			var frac_hours = self.total_hours - floor(self.total_hours)
-			var hours = self.hours + frac_hours
 			return int(frac_hours * MINUTES_PER_HOUR)
 			
 	var fract_day: float:
 		get:
-			return self.hours / HOURS_PER_DAY
+			var frac_hours = self.total_hours - floor(self.total_hours)
+			var hours = self.hours + frac_hours
+			return hours / HOURS_PER_DAY
 	
 	func _init():
 		self.reset()
@@ -35,13 +36,17 @@ class WorldTime:
 		self.total_hours = 0
 		
 	func update(delta: float):
-		self.total_hours += delta
+		self.total_hours += delta * WORLD_TIME_UPDATE_SCALE
 		
 	func _to_string():
-		return "Day {days}, {hours}:{minutes}".format({
+		var is_morning = hours < 12
+		var visible_hours = self.hours if is_morning else self.hours - 11
+			
+		return "Day {days}, {hours}:{minutes} {ampm}".format({
 			"days": self.days,
-			"hours": self.hours,
-			"minutes": self.minutes,
+			"hours": visible_hours,
+			"minutes": "%02d" % self.minutes,
+			"ampm": "am" if is_morning else "pm",
 		})
 
 
