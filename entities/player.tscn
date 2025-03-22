@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhbad74jyejln"]
+[gd_scene load_steps=9 format=3 uid="uid://dhbad74jyejln"]
 
 [ext_resource type="Script" path="res://entities/player.gd" id="1_8162v"]
-[ext_resource type="Material" uid="uid://c8ex74o8i2j1l" path="res://resources/tile_material/player_material.tres" id="1_oh5qc"]
-[ext_resource type="Texture2D" uid="uid://dvuet2kvu46m4" path="res://resources/entity_material/player_tile.tres" id="2_5fabo"]
+[ext_resource type="Material" uid="uid://c8ex74o8i2j1l" path="res://resources/entity_material/player_material.tres" id="1_oh5qc"]
+[ext_resource type="Texture2D" uid="uid://dvuet2kvu46m4" path="res://resources/tiles/player_tile.tres" id="2_5fabo"]
 [ext_resource type="Texture2D" uid="uid://c8g0s41vd8rh7" path="res://assets/gfx/2d_lights_and_shadows_neutral_point_light.webp" id="4_m2hl0"]
+[ext_resource type="Material" uid="uid://d2qqxiwyf600s" path="res://resources/entity_material/fist_material.tres" id="5_j33c2"]
+[ext_resource type="Texture2D" uid="uid://cgc1lias1icl7" path="res://resources/tiles/fist_tile.tres" id="6_lv0vv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rx1ki"]
 size = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlf24"]
+size = Vector2(0.5, 0.5)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -26,3 +31,16 @@ shape = SubResource("RectangleShape2D_rx1ki")
 shadow_enabled = true
 texture = ExtResource("4_m2hl0")
 texture_scale = 0.13
+
+[node name="HeldItem" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite" type="Sprite2D" parent="HeldItem"]
+material = ExtResource("5_j33c2")
+position = Vector2(1.75, 0)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("6_lv0vv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeldItem"]
+position = Vector2(1.75, 0)
+shape = SubResource("RectangleShape2D_wlf24")
